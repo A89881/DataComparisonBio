@@ -1,5 +1,5 @@
 """
-Final Version of data visualisation
+Version 4 with a little mini legend on the side
 """
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -26,32 +26,34 @@ sns.set_style("whitegrid")
 # Get list of hormone columns (excluding metadata)
 hormone_columns = df.columns[2:-4]  # Adjust index slicing as needed
 
-# Define distinct colors for better clarity
-color_palette = sns.color_palette("tab10", n_colors=len(grouped_df["Sample_Type"].unique()))
-
 # Loop through each hormone and create separate subplots
 for hormone in hormone_columns:
-    fig, axes = plt.subplots(1, 2, figsize=(16, 6), sharey=True)  # Two subplots side by side
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharey=True)  # Two subplots side by side
     
     # Separate control and treated data
     control_data = grouped_df[grouped_df["Control"]]
     treated_data = grouped_df[~grouped_df["Control"]]
     
     # Plot Control Data (Left subplot)
-    ax1 = sns.barplot(ax=axes[0], data=control_data, x="Trip_Number", y=hormone, hue="Sample_Type", palette=color_palette)
+    ax1 = sns.barplot(ax=axes[0], data=control_data, x="Trip_Number", y=hormone, hue="Sample_Type", palette="Blues")
     axes[0].set_title(f"Control Samples - {hormone}", fontsize=14, fontweight='bold')
     axes[0].set_xlabel("Trip Number (A=1, B=2, C=3, D=4)", fontsize=12)
-    axes[0].set_ylabel(f"{hormone} Concentration (ngH/g FW or DW)", fontsize=12)
+    axes[0].set_ylabel(f"{hormone} Concentration", fontsize=12)
     
     # Plot Hormone-Treated Data (Right subplot)
-    ax2 = sns.barplot(ax=axes[1], data=treated_data, x="Trip_Number", y=hormone, hue="Sample_Type", palette=color_palette)
+    ax2 = sns.barplot(ax=axes[1], data=treated_data, x="Trip_Number", y=hormone, hue="Sample_Type", palette="Reds")
     axes[1].set_title(f"Hormone-Treated Samples - {hormone}", fontsize=14, fontweight='bold')
     axes[1].set_xlabel("Trip Number (A=1, B=2, C=3, D=4)", fontsize=12)
     
-   # Move legends inside their respective subplots
-    sns.move_legend(ax1, "lower center", bbox_to_anchor=(.5, -0.25), ncol=6, title="Sample Types", frameon=False)
-    sns.move_legend(ax2, "lower center", bbox_to_anchor=(.5, -0.25), ncol=6, title="Sample Types", frameon=False)
-
-    # Adjust layout to fit legends properly
+    # Move legend to bottom center as a single row
+    sns.move_legend(
+        ax2, "lower center",
+        bbox_to_anchor=(.5, -0.25), ncol=6, title="Sample Types", frameon=False
+    )
+    
+    # Remove individual legends from subplots
+    axes[0].get_legend().remove()
+    
+    # Adjust layout to fit legend properly
     plt.tight_layout()
     plt.show()
