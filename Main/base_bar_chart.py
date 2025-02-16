@@ -1,5 +1,5 @@
 """
-Final Version of data visualisation
+Data visualisation with bar chart no error bars or etcetera
 """
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -18,7 +18,7 @@ df["Sample_Type"] = df["Sample_Name"].str.extract(r'(\d{3})')[0]  # Extracts the
 df["Control"] = df["Sample_Name"].str.startswith("K")  # Control samples start with "K"
 
 # Group by Trip_Number and Sample_Type, then compute mean hormone content
-grouped_df = df.groupby(["Trip_Number", "Sample_Type", "Control"]).mean(numeric_only=True).reset_index()
+grouped_df = df.groupby(["Trip_Number", "Sample_Type", "Control"]).median(numeric_only=True).reset_index()
 
 # Set seaborn style
 sns.set_style("whitegrid")
