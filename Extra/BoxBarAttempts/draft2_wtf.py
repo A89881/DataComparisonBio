@@ -121,10 +121,9 @@ def print_boxplot_stats(data, hormone, label, ax):
     print(grouped_values[["Sample_Type", "Trip_Number", "Median", "Min", "Q1", "Q3", "Max"]])
 
     # Convert lists to separate rows for seaborn compatibility
-    exploded_data = grouped_values.explode(hormone)  # Expands lists into separate rows
+    grouped_values[hormone] = grouped_values[hormone].apply(lambda x: list(x) if isinstance(x, list) else [x])
+    exploded_data = grouped_values.explode(hormone, ignore_index=True)
 
-    # Convert hormone values back to float (they become objects after explode)
-    exploded_data[hormone] = exploded_data[hormone].astype(float)
 
     # Create boxplot using correctly grouped values
     sns.boxplot(ax=ax, data=exploded_data, x="Trip_Number", y=hormone, hue="Sample_Type",
