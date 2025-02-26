@@ -3,6 +3,10 @@ Descriptive Statistics Output
 
 Descriptive Statistics for GA4:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1        1.490          2.2955     2.53425        2.778        1.733          5.1490     5.76950        6.413
+          35            2        2.161          3.7725     4.75300        5.458        1.268          5.7245     6.77400        9.069
+          35            3        0.116          0.8140     0.92050        0.958        2.372          4.1380    16.08475       51.361
+          35            4        0.071          0.1310     0.23000        0.422        0.370          1.3905    24.50500       90.853
          171            1        1.937          5.0535     7.42750        7.705        0.381          2.3610     2.60600        2.681
          171            2        2.580          2.7230     2.82400        3.073        1.092          2.1550     2.55225        3.414
          171            3        0.385          0.8650     1.90125        3.876        0.700          2.3960     7.18000       18.301
@@ -39,6 +43,10 @@ Descriptive Statistics for GA4:
 
 Descriptive Statistics for GA1:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1        0.330          0.4570     0.50000        0.623        0.475          0.6710     0.71400        0.813
+          35            2        0.453          0.5200     0.53725        0.562        0.418          0.7095     0.75050        0.827
+          35            3        0.438          0.5895     0.73175        0.767        0.452          0.5600     0.74925        1.059
+          35            4        0.699          0.8560     1.03175        1.310        0.887          1.3350     1.43600        1.484
          171            1        0.476          0.6010     0.70775        0.923        0.460          0.6975     0.83300        1.031
          171            2        0.408          0.4695     0.51125        0.551        0.366          0.4005     0.44950        0.574
          171            3        0.366          0.5045     0.56325        0.579        0.347          0.5575     0.69375        0.885
@@ -75,6 +83,10 @@ Descriptive Statistics for GA1:
 
 Descriptive Statistics for GA7:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         1.49           3.855      5.5125         5.73         1.37           2.125      2.6625         3.15
+          35            2         1.33           2.760      3.0275         3.05         2.55           4.060      5.1475         6.34
+          35            3         0.29           1.400      2.0300         3.29         4.62           5.990     25.2225        79.02
+          35            4          NaN             NaN         NaN          NaN         0.18           0.795     16.3750        61.57
          171            1         3.47           3.935      4.1500         4.27         0.55           3.015      3.1075         3.37
          171            2         1.50           1.780      1.9750         1.99         2.36           2.855      3.3250         4.00
          171            3         0.46           0.835      1.1325         1.77         2.81           6.005     14.0400        29.37
@@ -111,6 +123,10 @@ Descriptive Statistics for GA7:
 
 Descriptive Statistics for GA3:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1       50.085         53.7055    57.63025       66.397       35.661         45.1065    48.98825       58.685
+          35            2       43.820         67.5860    81.19175       81.299       59.004         65.7160    73.87725       92.481
+          35            3      103.707        107.3220   109.47950      111.104       88.317         92.5625    93.35475       94.104
+          35            4        8.170         13.5670    16.52875       18.526        3.143          4.8405     6.11800        7.117
          171            1       66.546         79.0015    80.29350       82.818       61.786         78.0825    81.40000       84.373
          171            2       72.245         74.2040    78.64775       86.516       61.558         74.2790    77.82275       86.543
          171            3       52.853         79.2135    83.64600       94.122       43.698         75.5065    82.43525       95.714
@@ -147,6 +163,10 @@ Descriptive Statistics for GA3:
 
 Descriptive Statistics for GA5:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         3.46           4.770      5.4350         5.45         5.46           7.190      9.1700        10.07
+          35            2        11.56          13.150     14.1300        15.03        10.57          11.415     12.5325        13.38
+          35            3         9.56          15.985     18.9750        26.22        10.26          15.255     20.6750        23.24
+          35            4         5.19           6.695      9.2250        14.19         2.68           4.125      5.1175         5.20
          171            1        17.27          22.505     24.6675        25.71        17.23          21.105     23.0800        27.64
          171            2        13.05          16.535     19.8200        22.40        12.23          18.595     19.5325        21.94
          171            3        14.90          26.765     27.8325        29.58        14.48          17.795     21.0875        21.38
@@ -183,6 +203,10 @@ Descriptive Statistics for GA5:
 
 Descriptive Statistics for GA34:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         0.27           0.315      0.3675         0.42         0.34           0.630      0.7375         0.88
+          35            2         1.06           1.440      1.7350         2.08         1.13           1.335      1.6200         1.98
+          35            3         0.42           0.565      0.7000         0.88         0.77           0.880      1.1275         1.78
+          35            4         0.11           0.170      0.1950         0.21         0.11           0.145      0.4100         1.16
          171            1         0.13           0.385      0.6775         1.03         0.24           0.365      0.4400         0.56
          171            2         0.08           0.140      0.1950         0.33         0.13           0.195      0.2375         0.26
          171            3         0.09           0.135      0.1500         0.18         0.02             NaN         NaN         0.71
@@ -219,6 +243,10 @@ Descriptive Statistics for GA34:
 
 Descriptive Statistics for GA8:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         1.60           2.285      2.3400         2.46         1.07           1.455      1.8000         2.04
+          35            2         1.54           2.935      3.6200         3.65         1.85           2.760      3.2475         3.69
+          35            3         4.57           4.970      5.5150         5.98         3.23           4.320      4.7925         5.16
+          35            4         0.85           1.060      1.3100         1.91         0.19           0.330      0.4425         0.54
          171            1         3.82           5.000      5.4000         5.82         5.07           5.650      5.9150         6.38
          171            2         4.98           5.845      6.1525         6.25         4.61           5.635      6.2175         7.17
          171            3         4.81           5.440      6.6250         8.71         4.21           4.990      6.4200         8.67
@@ -255,6 +283,10 @@ Descriptive Statistics for GA8:
 
 Descriptive Statistics for ABA:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1       594.63        1258.850   1423.9625      1426.37       265.30         821.205   1053.0525      1183.44
+          35            2       517.84         992.075   1152.7800      1297.83       400.23         999.475   1416.2325      1545.51
+          35            3       178.54         401.090   1415.3250      4438.56       187.24         301.765    412.9075       548.50
+          35            4        86.49         217.665    397.3075       689.86       106.70         219.695    353.8425       437.01
          171            1      1053.34        2403.145   2796.2825      2805.38      1033.26        1517.400   1631.2250      1824.53
          171            2      1367.15        1907.960   2449.4075      2675.00      1345.65        1496.095   1582.4425      1725.28
          171            3       528.06        1621.340   2474.1575      3325.73       378.68         683.955   1009.1650      1504.21
@@ -291,6 +323,10 @@ Descriptive Statistics for ABA:
 
 Descriptive Statistics for JA:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         5.46           7.740      9.8875        14.77         4.07          14.535     26.0775        48.51
+          35            2         4.19          58.670     88.5025       144.46        42.80          64.345     85.7650       136.84
+          35            3         7.18           8.300      9.3000        11.97         6.65          15.770     19.7100        25.47
+          35            4         4.72          12.360     12.9375        14.16         2.40          12.195     12.7575        12.81
          171            1         2.32          13.765     29.3100        49.08         2.96          13.790     20.3850        38.73
          171            2        23.13          28.425     46.0275        86.43        18.00          39.150     59.5850        75.32
          171            3         4.13           6.145      7.9975         8.50         2.87           5.365      6.7800         6.99
@@ -327,6 +363,10 @@ Descriptive Statistics for JA:
 
 Descriptive Statistics for IAA:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         7.01          10.160     11.4625        11.62         6.95           7.970      9.1100        10.10
+          35            2         6.51           8.015      8.4800         8.87         7.42           7.965      8.3250         8.34
+          35            3         4.13           4.760      5.1525         6.21         3.67           4.970      5.2050         5.82
+          35            4         4.69           7.640      9.9725        10.31         2.80           4.610      5.8675         5.92
          171            1         6.20           9.840      9.9875        10.34         5.04           7.175      7.4500         7.54
          171            2         9.78          11.205     11.3050        11.35         7.76          10.245     12.0525        12.18
          171            3         9.64          11.505     13.0400        13.31         8.70           9.790     11.3400        13.50
@@ -363,6 +403,10 @@ Descriptive Statistics for IAA:
 
 Descriptive Statistics for SA:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1        90.41         108.615    115.5275       129.26        84.00         112.305    141.7375       191.47
+          35            2        78.15         144.975    163.8800       174.47        97.03         127.980    153.2625       206.64
+          35            3        50.91          75.805     87.7875        90.30        57.37          83.085     93.4500       121.89
+          35            4        80.98         203.145    217.8050       236.99       117.50         191.910    253.7925       262.50
          171            1        44.39          60.915     67.2400        80.62        39.42          68.100     78.6075       105.66
          171            2        40.79          55.475     72.3825        88.14        48.07          52.255     60.1300        71.59
          171            3        33.99          42.615    104.3825       281.39        32.28          41.515     91.7375       234.17
@@ -399,6 +443,10 @@ Descriptive Statistics for SA:
 
 Descriptive Statistics for DHZ:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         0.07           0.135      0.1400         0.14         0.10           0.140      0.1500         0.15
+          35            2         0.14           0.145      0.1575         0.18         0.14           0.160      0.1750         0.19
+          35            3         0.15           0.170      0.1975         0.22         0.16           0.210      0.2500         0.31
+          35            4         0.25           0.270      0.2775         0.30         0.26           0.315      0.3250         0.34
          171            1         0.07           0.085      0.0925         0.10         0.07           0.090      0.1000         0.10
          171            2         0.15           0.155      0.1650         0.18         0.12           0.145      0.2075         0.38
          171            3         0.15           0.165      0.1825         0.19         0.14           0.155      0.1675         0.19
@@ -435,6 +483,10 @@ Descriptive Statistics for DHZ:
 
 Descriptive Statistics for iP:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         0.01           0.010      0.0125         0.02         0.01           0.010      0.0125         0.02
+          35            2         0.01           0.010      0.0100         0.01         0.01           0.010      0.0100         0.01
+          35            3         0.02           0.020      0.0225         0.03         0.02           0.020      0.0225         0.03
+          35            4         0.04           0.050      0.0550         0.07         0.03           0.065      0.0800         0.08
          171            1         0.01           0.010      0.0125         0.02         0.01           0.010      0.0100         0.01
          171            2         0.01           0.010      0.0100         0.01         0.01           0.015      0.0200         0.02
          171            3         0.01           0.020      0.0225         0.03         0.01           0.020      0.0200         0.02
@@ -471,6 +523,10 @@ Descriptive Statistics for iP:
 
 Descriptive Statistics for tZ:
  Sample_Type  Trip_Number  Min_Control  Median_Control  Q3_Control  Max_Control  Min_Treated  Median_Treated  Q3_Treated  Max_Treated
+          35            1         0.03           0.030      0.0325         0.04         0.04           0.060      0.0625         0.07
+          35            2         0.03           0.040      0.0500         0.05         0.03           0.030      0.0350         0.05
+          35            3         0.03           0.035      0.0425         0.05         0.04           0.050      0.0525         0.06
+          35            4         0.04           0.055      0.0600         0.06         0.06           0.060      0.0625         0.07
          171            1         0.02           0.040      0.0425         0.05         0.03           0.045      0.0525         0.06
          171            2         0.02           0.035      0.0400         0.04         0.03           0.045      0.0650         0.11
          171            3         0.03           0.045      0.0525         0.06         0.03           0.045      0.0500         0.05

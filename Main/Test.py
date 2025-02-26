@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from scipy.stats import chi2_contingency
 
 # Load cleaned dataset
 df = pd.read_csv("Main/Cleaned_DatasetBio.csv", delimiter=";")
@@ -16,6 +17,7 @@ df["Sample_Type"] = df["Sample_Type"].astype(int)
 
 # Identify control and hormone-treated samples
 df["Control"] = df["Sample_Name"].str.startswith("K")  # Control samples start with "K"
+df["Hormone_Treated"] = ~df["Control"]  # Inverse of Control
 
 # Get hormone columns explicitly
 hormone_columns = df.select_dtypes(include=["float64", "int64"]).columns.tolist()
@@ -49,7 +51,6 @@ def print_boxplot_stats(data, hormone, label, ax):
     grouped_values[hormone] = grouped_values[hormone].apply(lambda x: list(x) if isinstance(x, list) else [x])
     exploded_data = grouped_values.explode(hormone, ignore_index=True)
 
-
     # Create boxplot using correctly grouped values
     sns.boxplot(ax=ax, data=exploded_data, x="Trip_Number", y=hormone, hue="Sample_Type",
                 palette=color_palette, fliersize=3, linewidth=1, width=0.5)
@@ -73,10 +74,34 @@ for hormone in hormone_columns:
     control_data = df[df["Control"]]
     treated_data = df[~df["Control"]]
 
+    df["Control"] = df["Sample_Name"].str.startswith("K")  # Control samples start with "K"
+    df["Hormone_Treated"] = ~df["Control"]  # Inverse of Control
     # Print stats and plot control and treated samples
     print_boxplot_stats(control_data, hormone, "Control", axes[0])
     print_boxplot_stats(treated_data, hormone, "Hormone-Treated", axes[1])
 
+     # === Apply Chi-Square Test ===
+    # Create a contingency table (counts of Control vs. Hormone-Treated per Sample_Type)
+    contingency_table = pd.crosstab(df["Sample_Type"], df["Control"])
+
+    # Perform Chi-Square Test
+    chi2, p, dof, expected = chi2_contingency(contingency_table)
+
+    # Print results
+    print("\nChi-Square Test Results:")
+    print(f"Chi-Square Statistic: {chi2:.4f}")
+    print(f"Degrees of Freedom: {dof}")
+    print(f"P-value: {p:.4f}")
+
+    # Interpretation
+    if p < 0.05:
+        print("Conclusion: There is a statistically significant association between Sample_Type and Treatment.")
+    else:
+        print("Conclusion: No significant association found between Sample_Type and Treatment.")
+
+
     # Adjust layout and show plot
     plt.tight_layout()
     plt.show()
+
+   

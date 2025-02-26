@@ -10,7 +10,7 @@ df = pd.read_csv("Main/Cleaned_DatasetBio.csv", delimiter=";")
 df["Trip_Number"] = df["Trip_Number"].astype(int)
 
 # Extract Sample_Type from Sample_Name
-df["Sample_Type"] = df["Sample_Name"].str.extract(r'(\d{3})')[0]
+df["Sample_Type"] = df["Sample_Name"].str.extract(r'(\d{2,3})')[0]
 df = df.dropna(subset=["Sample_Type"])  # Remove NaN rows
 df["Sample_Type"] = df["Sample_Type"].astype(int)
 
@@ -27,7 +27,7 @@ sns.set_style("whitegrid")
 color_palette = sns.color_palette("tab10", n_colors=df["Sample_Type"].nunique())
 
 # Output file for descriptive statistics
-output_file = "descriptive_statistics.txt"
+output_file = "Main/descriptive_statistics.csv"
 
 # Function to compute stats and write side-by-side output
 def write_boxplot_stats(control_data, treated_data, hormone):
@@ -84,20 +84,4 @@ for hormone in hormone_columns:
     # Compute and write side-by-side stats
     write_boxplot_stats(control_data, treated_data, hormone)
 
-    # Create boxplots
-    for data, label, ax in zip([control_data, treated_data], ["Control", "Hormone-Treated"], axes):
-        exploded_data = data.explode(hormone)
-        exploded_data[hormone] = exploded_data[hormone].astype(float)
-
-        sns.boxplot(ax=ax, data=exploded_data, x="Trip_Number", y=hormone, hue="Sample_Type",
-                    palette=color_palette, fliersize=3, linewidth=1, width=0.5)
-
-        ax.set_title(f"{label} Samples - {hormone}", fontsize=14, fontweight='bold')
-        ax.set_xlabel("Trip Number", fontsize=12)
-        ax.set_ylabel(f"{hormone} Concentration", fontsize=12)
-        ax.legend(title="Sample Types", loc="upper center", bbox_to_anchor=(0.5, -0.15), ncol=3)
-        ax.set_ylim(exploded_data[hormone].min() * 0.9, exploded_data[hormone].max() * 1.1)
-
-    # Adjust layout and show plot
-    plt.tight_layout()
-    plt.show()
+    
