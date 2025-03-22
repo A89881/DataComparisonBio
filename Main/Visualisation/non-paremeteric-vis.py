@@ -17,15 +17,17 @@ def visualize_hormone_analysis(summary_df, method="heatmap"):
 
         plt.xlabel("Sample Type")
         plt.ylabel("Hormone")
-        plt.title("Significance Ratio Heatmap (Hormone-Sample by Trip)")
+        plt.title("Significance Ratio Heatmap (Hormone ratio to Sample-Type)")
         plt.xticks(rotation=45)
         plt.yticks(rotation=0)
         
         plt.tight_layout()
-        plt.savefig("Statistics/Plots/Hormone_Analysis_Heatmap.png")
+        plt.savefig("Statistics/Plots/SignificancePlots/Hormone_Analysis_Heatmap.png")
         plt.show()
 
     elif method == "bar":
+        num_colors = summary_df["Hormone"].nunique()  # Get the number of unique hormones
+        custom_palette = sns.color_palette("tab20", n_colors=num_colors)
         plt.figure(figsize=(14, 7))
 
         # Bar plot with proper spacing
@@ -34,7 +36,8 @@ def visualize_hormone_analysis(summary_df, method="heatmap"):
             x="Sample Type", 
             y="Significance Ratio", 
             hue="Hormone", 
-            palette="tab10"
+            palette=custom_palette
+
         )
 
         # Auto-scaling in quarters
@@ -56,7 +59,7 @@ def visualize_hormone_analysis(summary_df, method="heatmap"):
 
         plt.xticks(rotation=45)
         plt.tight_layout()
-        plt.savefig("Statistics/Plots/Hormone_Analysis_Barplot.png")
+        plt.savefig("Statistics/Plots/SignificancePlots/Hormone_Analysis_Barplot.png")
         plt.show()
 
 # Run visualization (choose method: "heatmap" or "bar")

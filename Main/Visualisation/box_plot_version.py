@@ -68,31 +68,10 @@ def print_boxplot_stats(data, hormone, label, ax):
     ax.set_ylim(exploded_data[hormone].min() * 0.9, exploded_data[hormone].max() * 1.1)
 
 # Ensure output directory exists
-plot_dir = "Statistics/Plots/"
+plot_dir = "Statistics/Plots/BoxPlots"
 os.makedirs(plot_dir, exist_ok=True)
 
-# Loop through each hormone and create separate subplots
-for hormone in hormone_columns:
-    fig, axes = plt.subplots(1, 2, figsize=(16, 6), sharey=False)  # Two subplots, independent scales
-    
-    # Separate control and treated data
-    control_data = df[df["Control"]]
-    treated_data = df[~df["Control"]]
-
-    # Print stats and plot control and treated samples
-    print_boxplot_stats(control_data, hormone, "Control", axes[0])
-    print_boxplot_stats(treated_data, hormone, "Hormone-Treated", axes[1])
-
-    # Adjust layout and show plot
-    plt.tight_layout()
-    # plot_path = os.path.join(plot_dir, f"{hormone}_Boxplot.png")
-    # plt.savefig(plot_path, dpi=300)
-    plt.show()
-
-"""
-Quick autosave version
-"""
-# Loop through each hormone and create separate subplots (saving version)
+# # Loop through each hormone and create separate subplots
 # for hormone in hormone_columns:
 #     fig, axes = plt.subplots(1, 2, figsize=(16, 6), sharey=False)  # Two subplots, independent scales
     
@@ -104,12 +83,27 @@ Quick autosave version
 #     print_boxplot_stats(control_data, hormone, "Control", axes[0])
 #     print_boxplot_stats(treated_data, hormone, "Hormone-Treated", axes[1])
 
-#     # Adjust layout
+#     # Adjust layout and show plot
 #     plt.tight_layout()
+#     plt.show()
 
-#     # Save the plot instead of showing it
-#     plot_path = os.path.join(plot_dir, f"{hormone}_Boxplot.png")
-#     plt.savefig(plot_path, dpi=300)
-#     plt.close()
+"""
+Quick autosave version
+"""
+# Loop through each hormone and create separate subplots (saving version)
+for hormone in hormone_columns:
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6), sharey=False)  # Two subplots, independent scales
+    
+    # Separate control and treated data
+    control_data = df[df["Control"]]
+    treated_data = df[~df["Control"]]
 
-#     print(f"Saved plot: {plot_path}")
+    # Adjust layout
+    plt.tight_layout()
+
+    # Save the plot instead of showing it
+    plot_path = os.path.join(plot_dir, f"{hormone}_Boxplot.png")
+    plt.savefig(plot_path, dpi=300)
+    plt.close()
+
+    print(f"Saved plot: {plot_path}")
