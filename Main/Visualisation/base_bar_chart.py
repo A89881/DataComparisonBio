@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load cleaned dataset
-df = pd.read_csv("Main/Cleaned_DatasetBio.csv", delimiter=";")
+df = pd.read_csv("Statistics/Cleaned_DatasetBio.csv", delimiter=";")
 
 # Ensure Trip_Number is treated as an integer
 df["Trip_Number"] = df["Trip_Number"].astype(int)

@@ -2,9 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import os
 
 # Load cleaned dataset
-df = pd.read_csv("Main/Cleaned_DatasetBio.csv", delimiter=";")
+df = pd.read_csv("Statistics/Cleaned_DatasetBio.csv", delimiter=";")
 
 # Ensure Trip_Number is treated as an integer
 df["Trip_Number"] = df["Trip_Number"].astype(int)
@@ -19,6 +20,7 @@ df["Control"] = df["Sample_Name"].str.startswith("K")  # Control samples start w
 
 # Get hormone columns explicitly
 hormone_columns = df.select_dtypes(include=["float64", "int64"]).columns.tolist()
+hormone_columns = [col for col in hormone_columns if col not in ["Trip_Number", "Sample_Type"]]  # Exclude non-hormone columns
 
 # Set seaborn style
 sns.set_style("whitegrid")
@@ -65,6 +67,10 @@ def print_boxplot_stats(data, hormone, label, ax):
     # Enable independent y-axis scaling
     ax.set_ylim(exploded_data[hormone].min() * 0.9, exploded_data[hormone].max() * 1.1)
 
+# Ensure output directory exists
+plot_dir = "Statistics/Plots/"
+os.makedirs(plot_dir, exist_ok=True)
+
 # Loop through each hormone and create separate subplots
 for hormone in hormone_columns:
     fig, axes = plt.subplots(1, 2, figsize=(16, 6), sharey=False)  # Two subplots, independent scales
@@ -79,4 +85,31 @@ for hormone in hormone_columns:
 
     # Adjust layout and show plot
     plt.tight_layout()
+    # plot_path = os.path.join(plot_dir, f"{hormone}_Boxplot.png")
+    # plt.savefig(plot_path, dpi=300)
     plt.show()
+
+"""
+Quick autosave version
+"""
+# Loop through each hormone and create separate subplots (saving version)
+# for hormone in hormone_columns:
+#     fig, axes = plt.subplots(1, 2, figsize=(16, 6), sharey=False)  # Two subplots, independent scales
+    
+#     # Separate control and treated data
+#     control_data = df[df["Control"]]
+#     treated_data = df[~df["Control"]]
+
+#     # Print stats and plot control and treated samples
+#     print_boxplot_stats(control_data, hormone, "Control", axes[0])
+#     print_boxplot_stats(treated_data, hormone, "Hormone-Treated", axes[1])
+
+#     # Adjust layout
+#     plt.tight_layout()
+
+#     # Save the plot instead of showing it
+#     plot_path = os.path.join(plot_dir, f"{hormone}_Boxplot.png")
+#     plt.savefig(plot_path, dpi=300)
+#     plt.close()
+
+#     print(f"Saved plot: {plot_path}")

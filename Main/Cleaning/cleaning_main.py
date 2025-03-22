@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset with correct delimiter and skip first row (metadata)
-df = pd.read_csv("Main\DatasetBio.csv", delimiter=";", skiprows=1)
+df = pd.read_csv("Statistics\DatasetBio.csv", delimiter=";", skiprows=1)
 
 # Rename columns correctly
 df.columns = ["Sample_Number", "Sample_Name"] + df.columns[2:].tolist()
@@ -13,4 +13,4 @@ df["Control"] = df["Sample_Name"].str.strip().str[0] == "K"
 df["Hormone_Treated"] = df["Sample_Name"].str.contains(r"\bGA[1-4]\b", regex=True)
 trip_map = {"A": 1, "B": 2, "C": 3, "D": 4}
 df["Trip_Number"] = df["Sample_Name"].str.strip().str[-1].map(trip_map)
-df.to_csv("Cleaned_DatasetBio.csv", index=False, sep=";")
+df.to_csv("Statistics/Cleaned_DatasetBio.csv", index=False, sep=";")
